@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 namespace GitHubLogRecordTest
 {
     [TestClass]
-    public class MethodsTest
-    {
+    public class MethodsTest {
         [TestMethod]
         public void signInTest() {
             int statusCode = 200;
