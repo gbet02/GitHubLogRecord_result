@@ -12,8 +12,8 @@ namespace GitHubLogRecordTest
         [TestMethod]
         public void signInTest() {
             Credentials credential = new Credentials();
-            credential.email = "gilbertalonzovillafuerte@gmail.com";
-            credential.password = "060683vermilion";
+            credential.email = "inset username here";
+            credential.password = "insert password here";
             GitHubMethod method = new GitHubMethod(new GitHub());
             Task<int> test = method.signIn(credential);
             Task.WaitAll(test);
