@@ -6,18 +6,14 @@ using System.Threading.Tasks;
 
 namespace GitHubLogRecord.Injectors
 {
-    public class GitHubMethod
-    {
+    public class GitHubMethod {
         private IGitHub _github;
         public GitHubMethod(IGitHub github) {
             _github = github;
         }
 
         public Task<int> signIn(Credentials credentials) {
-            try { 
-                //_github.signIn(credentials); 
-                return _github.signIn(credentials);
-            }
+            try {  return _github.signIn(credentials); }
             catch (Exception e) {
                 string errorText = e.Message;
                 return null; 

@@ -4,8 +4,7 @@ using System.Threading.Tasks;
 
 namespace GitHubLogRecord.Interfaces
 {
-    public interface IGitHub
-    {
+    public interface IGitHub {
         Task<int> signIn(Credentials credentials);
         List<string> scrape();
     }
