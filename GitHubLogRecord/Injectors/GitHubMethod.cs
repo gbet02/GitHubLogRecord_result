@@ -2,6 +2,7 @@
 using GitHubLogRecord.Models;
 using GitHubLogRecord.Interfaces;
 using System;
+using System.Threading.Tasks;
 
 namespace GitHubLogRecord.Injectors
 {
@@ -12,13 +13,15 @@ namespace GitHubLogRecord.Injectors
             _github = github;
         }
 
-        public bool signIn(Credentials credentials) {
+        public Task<int> signIn(Credentials credentials) {
             try { 
-                _github.signIn(credentials); 
-                return false; 
+                //_github.signIn(credentials); 
+                return _github.signIn(credentials);
             }
-            catch (Exception e) { 
-                return false; }
+            catch (Exception e) {
+                string errorText = e.Message;
+                return null; 
+            }
         }
 
         public List<string> scrape() {
