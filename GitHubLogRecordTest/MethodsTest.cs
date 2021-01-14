@@ -11,13 +11,14 @@ namespace GitHubLogRecordTest
     {
         [TestMethod]
         public void signInTest() {
+            int statusCode = 200;
             Credentials credential = new Credentials();
             credential.email = "inset username here";
             credential.password = "insert password here";
             GitHubMethod method = new GitHubMethod(new GitHub());
             Task<int> test = method.signIn(credential);
             Task.WaitAll(test);
-            Assert.AreEqual(200, test.Result);
+            Assert.AreEqual(statusCode, test.Result);
         }
 
         [TestMethod]
